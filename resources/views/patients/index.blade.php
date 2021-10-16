@@ -16,6 +16,23 @@
 
     <div class="container mx-auto">
         <h1 class="text-3xl text-center my-10">Patients</h1>
+
+        <form method="post" action="{{route('patient.store')}}" enctype="multipart/form-data">
+        @csrf
+        
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter name" class="">
+            </div>
+            <div>
+                <label for="blood_pressure">Blood Pressure</label>
+                <input type="blood_pressure" name="blood_pressure" id="blood_pressure" placeholder="Enter blood pressure" class="">
+            </div>
+
+            <button type="submit" class="">Submit</button>
+        
+        </form>
+
         <livewire:patients-table>
 
     </div>

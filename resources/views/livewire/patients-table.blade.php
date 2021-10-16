@@ -48,7 +48,7 @@
             @foreach($patients as $patient)
                 <tr>
                     <td class="border px-4 py-2">{{ $patient->id }}</td>
-                    <td class="border px-4 py-2">{{ $patient->name }}</td>
+                    <td class="border px-4 py-2"><a href="{{route('patient.edit', $patient->id)}}">{{ $patient->name }}</a></td>
                     <td class="border px-4 py-2">{{ $patient->blood_pressure }}</td>
                     
                 </tr>

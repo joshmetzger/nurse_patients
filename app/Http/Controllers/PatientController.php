@@ -14,4 +14,23 @@ class PatientController extends Controller
 
         return view('patients.index');
     }
+
+    public function store(Request $request){
+
+        $inputs = request()->validate([
+            'name'=>'required|min:8|max:255',
+            'blood_pressure'=> 'required',
+        ]);
+
+        // $inputs->create();
+
+        Patient::create($inputs);
+
+        return back();
+
+    }
+
+    public function edit(Patient $patient){
+        return view('patients.edit', ['patients'=>$patient]);
+    }
 }
