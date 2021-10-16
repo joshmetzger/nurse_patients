@@ -21,21 +21,30 @@
         @csrf
         
             <div>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Enter name" class="">
+                <label for="name" class="">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter name" 
+                    class="appearance-none w-1/2 text-gray-700 border border-gray-2000 rounded py-3 px-4 leading-tight"
+                >
             </div>
 
             <div>
-                <label for="blood_pressure_systolic">Systolic Blood Pressure</label>
-                <input type="text" name="blood_pressure_systolic" id="blood_pressure_systolic" placeholder="Enter systolic blood pressure" class="">
+                <label for="blood_pressure_systolic">Systolic Blood Pressure: </label>
+                <input type="text" name="blood_pressure_systolic" id="blood_pressure_systolic" placeholder="Enter systolic blood pressure" 
+                    class="appearance-none w-1/2 text-gray-700 border border-gray-2000 rounded py-3 px-4 leading-tight"
+                >
             </div>
             
             <div>
                 <label for="blood_pressure_diastolic">Diastolic Blood Pressure</label>
-                <input type="text" name="blood_pressure_diastolic" id="blood_pressure_diastolic" placeholder="Enter diastolic blood pressure" class="">
+                <input type="text" name="blood_pressure_diastolic" id="blood_pressure_diastolic" placeholder="Enter diastolic blood pressure" 
+                    class="appearance-none w-1/2 text-gray-700 border border-gray-2000 rounded py-3 px-4 leading-tight"
+                >
             </div>
 
-            <button type="submit" class="">Submit</button>
+            <button type="submit" 
+                class="appearance-none border border-gray-2000 rounded py-3 px-4 bg-gray-200"
+            >
+            Create Patient</button>
         
         </form>
 
