@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use App\Exports\PatientExport;
+use Excel;
 
 class PatientController extends Controller
 {
@@ -13,6 +15,14 @@ class PatientController extends Controller
         $patient = Patient::all();
 
         return view('patients.index');
+    }
+
+    public function exportIntoExcel(){
+        return Excel::download(new PatientExport, 'patient_list.xls');
+    }
+
+    public function exportIntoCSV(){
+        return Excel::download(new PatientExport, 'patient_list.csv');
     }
 
     public function store(Request $request){

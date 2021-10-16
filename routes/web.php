@@ -26,3 +26,7 @@ Route::post('patients', [App\Http\Controllers\PatientController::class, 'store']
 
 Route::get('/patients/{patient}/edit', [App\Http\Controllers\PatientController::class, 'edit'])->name('patient.edit');
 // Route::patch('/patients/{patient}/update', [App\Http\Controllers\PatientController::class, 'update'])->name('patient.update');
+
+
+Route::get('/export-excel', [App\Http\Controllers\PatientController::class, 'exportIntoExcel'])->name('patients.export-excel');
+Route::get('/export-csv', [App\Http\Controllers\PatientController::class, 'exportIntoCSV'])->name('patients.export-csv');

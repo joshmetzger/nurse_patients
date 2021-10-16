@@ -41,6 +41,20 @@
 
         <livewire:patients-table>
 
+        <form action="{{route('patients.export-excel')}}">
+            @csrf
+
+            <button type="submit" class="">Download Patients List in Excel</button>
+
+        </form>
+
+        <form action="{{route('patients.export-csv')}}">
+            @csrf
+
+            <button type="submit" class="">Download Patients List in CSV</button>
+            
+        </form>
+
     </div>
 
     @livewireScripts
