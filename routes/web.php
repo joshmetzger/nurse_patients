@@ -25,7 +25,7 @@ Route::get('/patients', [App\Http\Controllers\PatientController::class, 'index']
 Route::post('patients', [App\Http\Controllers\PatientController::class, 'store'])->name('patient.store');
 
 Route::get('/patients/{patient}/edit', [App\Http\Controllers\PatientController::class, 'edit'])->name('patient.edit');
-// Route::patch('/patients/{patient}/update', [App\Http\Controllers\PatientController::class, 'update'])->name('patient.update');
+Route::patch('/patients/{patient}/update', [App\Http\Controllers\PatientController::class, 'update'])->name('patient.update');
 
 
 Route::get('/export-excel', [App\Http\Controllers\PatientController::class, 'exportIntoExcel'])->name('patients.export-excel');

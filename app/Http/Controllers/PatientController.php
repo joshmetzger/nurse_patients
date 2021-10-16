@@ -42,6 +42,25 @@ class PatientController extends Controller
     }
 
     public function edit(Patient $patient){
-        return view('patients.edit', ['patients'=>$patient]);
+        return view('patients.edit', ['patient'=>$patient]);
+    }
+
+    public function update(Patient $patient){
+
+        $inputs = request()->validate([
+            'name'=> 'required|min:8|max:255',
+            'blood_pressure_systolic'=> 'required',
+            'blood_pressure_diastolic'=> 'required'
+        ]);
+
+        $patient->name = $inputs['name'];
+        $patient->blood_pressure_systolic = $inputs['blood_pressure_systolic'];
+        $patient->blood_pressure_diastolic = $inputs['blood_pressure_diastolic'];
+
+        // $patient->save();
+
+        $patient->update($inputs);
+
+        return redirect()->route('patients.index');
     }
 }

@@ -42,6 +42,7 @@
                 <th class="px-4 py-2">Name</th>
                 <th class="px-4 py-2">Blood Pressure Systolic</th>
                 <th class="px-4 py-2">Blood Pressure Diastolic</th>
+                <th class="px-4 py-2">Edit</th>
                 
             </tr>
         </thead>
@@ -49,9 +50,17 @@
             @foreach($patients as $patient)
                 <tr>
                     <td class="border px-4 py-2">{{ $patient->id }}</td>
-                    <td class="border px-4 py-2 hover:textColor-blue"><a href="{{route('patient.edit', $patient->id)}}">{{ $patient->name }}</a></td>
+                    <td class="border px-4 py-2 hover:textColor-blue">{{ $patient->name }}</td>
                     <td class="border px-4 py-2">{{ $patient->blood_pressure_systolic }}</td>
                     <td class="border px-4 py-2">{{ $patient->blood_pressure_diastolic }}</td>
+                    <td class="border px-4 py-2">
+                        <form action="{{route('patient.edit', $patient->id)}}">
+                        @csrf
+
+                            <button type="submit">Edit</button>
+                        
+                        </form>
+                    </td>
                     
                 </tr>
             @endforeach
