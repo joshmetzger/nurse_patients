@@ -7,7 +7,7 @@
             <select wire:model="orderBy" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
                 <option value="id">ID</option>
                 <option value="name">Name</option>
-                <option value="email">Blood Pressure</option>
+                {{-- <option value="email">Blood Pressure</option> --}}
                 
             </select>
             <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -40,7 +40,8 @@
             <tr>
                 <th class="px-4 py-2">ID</th>
                 <th class="px-4 py-2">Name</th>
-                <th class="px-4 py-2">Blood Pressure</th>
+                <th class="px-4 py-2">Blood Pressure Systolic</th>
+                <th class="px-4 py-2">Blood Pressure Diastolic</th>
                 
             </tr>
         </thead>
@@ -49,7 +50,8 @@
                 <tr>
                     <td class="border px-4 py-2">{{ $patient->id }}</td>
                     <td class="border px-4 py-2"><a href="{{route('patient.edit', $patient->id)}}">{{ $patient->name }}</a></td>
-                    <td class="border px-4 py-2">{{ $patient->blood_pressure }}</td>
+                    <td class="border px-4 py-2">{{ $patient->blood_pressure_systolic }}</td>
+                    <td class="border px-4 py-2">{{ $patient->blood_pressure_diastolic }}</td>
                     
                 </tr>
             @endforeach

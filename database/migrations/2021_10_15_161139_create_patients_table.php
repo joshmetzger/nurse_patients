@@ -16,7 +16,8 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->integer('blood_pressure')->nullable();
+            $table->integer('blood_pressure_systolic');
+            $table->integer('blood_pressure_diastolic');
             $table->timestamps();
         });
     }

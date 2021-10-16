@@ -24,9 +24,15 @@
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="Enter name" class="">
             </div>
+
             <div>
-                <label for="blood_pressure">Blood Pressure</label>
-                <input type="blood_pressure" name="blood_pressure" id="blood_pressure" placeholder="Enter blood pressure" class="">
+                <label for="blood_pressure_systolic">Systolic Blood Pressure</label>
+                <input type="text" name="blood_pressure_systolic" id="blood_pressure_systolic" placeholder="Enter systolic blood pressure" class="">
+            </div>
+            
+            <div>
+                <label for="blood_pressure_diastolic">Diastolic Blood Pressure</label>
+                <input type="text" name="blood_pressure_diastolic" id="blood_pressure_diastolic" placeholder="Enter diastolic blood pressure" class="">
             </div>
 
             <button type="submit" class="">Submit</button>

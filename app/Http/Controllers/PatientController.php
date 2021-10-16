@@ -19,7 +19,8 @@ class PatientController extends Controller
 
         $inputs = request()->validate([
             'name'=>'required|min:8|max:255',
-            'blood_pressure'=> 'required',
+            'blood_pressure_systolic'=> 'required',
+            'blood_pressure_diastolic'=> 'required',
         ]);
 
         // $inputs->create();

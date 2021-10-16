@@ -14,14 +14,15 @@ class Patient extends Model
 
     protected $fillable = [
         'name',
-        'blood_pressure',
+        'blood_pressure_systolic',
+        'blood_pressure_diastolic',
     ];
 
     public static function search($search)
     {
         return empty($search) ? static::query()
             : static::query()->where('id', 'like', '%'.$search.'%')
-                ->orWhere('name', 'like', '%'.$search.'%')
-                ->orWhere('blood_pressure', 'like', '%'.$search.'%');
+                ->orWhere('name', 'like', '%'.$search.'%');
+                
     }
 }

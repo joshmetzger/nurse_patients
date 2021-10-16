@@ -24,6 +24,8 @@ class PatientFactory extends Factory
         return [
             //
             'name' => $this->faker->name(),
+            'blood_pressure_systolic' => $this->faker->numberBetween(1,200),
+            'blood_pressure_diastolic' => $this->faker->numberBetween(1,200),
             
         ];
     }
